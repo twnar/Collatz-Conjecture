@@ -36,7 +36,7 @@ Then navigate to **http://localhost:8080** in your browser.
 ## 💎 Features
 
 * **Cosmic Dark UI:** An immersive, responsive workspace featuring real-time interactive starfields and glowing nebula effects.
-* **Ultra-Large Number Support:** Computes starting values up to **10,000 digits long** without crashing, breaking, or slowing down.
+* **Ultra-Large Number Support:** Computes starting values up to **10,000 digits long** (meaning the largest supported value is $9.99\dots \times 10^{9999} \approx 10^{10000} - 1$) without crashing, breaking, or slowing down.
 * **Dynamic SVG Path Charting:** Real-time generation of mathematical peak charts featuring custom bézier smoothing.
 * **Hybrid Execution Fallback:** Built with seamless fail-safes. If the Flask backend API is unreachable, the client dynamically falls back to an internal JavaScript evaluation algorithm.
 * **Dual-Mode Control:** Run it as a rich web dashboard or execute raw inputs directly via a fast, native Command Line Interface (CLI).
