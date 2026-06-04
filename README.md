@@ -5,24 +5,25 @@ Here is the completely updated and optimized `README.md` file tailored specifica
 ```markdown
 # 3x+1 — Collatz Conjecture Visualizer
 
-An interactive, cosmic-themed web dashboard and command-line engine built to calculate, map, and visualize the hauntingly beautiful patterns of the Collatz Conjecture.
+An interactive, cosmic-themed web dashboard and command-line engine built to calculate, map, and visualize the mathematical patterns of the Collatz Conjecture.
 
 ![Collatz Visualizer Demo](https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=800&auto=format&fit=crop)  
 *🚀 Tip: Replace this placeholder image with a real screenshot or GIF of your beautiful starfield UI!*
 
 ---
 
-### **[👉 Launch Your Local Demo](http://localhost:8080)**
+## 🚀 [Launch Your Local Demo](http://localhost:8080)
 
 ---
 
 ## ⚡ Quick Start
 
-### **Windows**
-Simply double-click **`run.bat`**. This automatically installs Flask, boots up the local server, and launches the application directly in your browser.
+### Windows
+Simply double-click `run.bat`. [cite_start]This automatically installs Flask, boots up the local server, and launches the application directly in your browser[cite: 2, 3].
 
-### **macOS / Linux**
+### macOS / Linux
 Run the following commands in your terminal:
+
 ```bash
 pip install -r requirements.txt
 python server.py
@@ -36,7 +37,7 @@ Then navigate to **http://localhost:8080** in your browser.
 ## 💎 Features
 
 * **Cosmic Dark UI:** An immersive, responsive workspace featuring real-time interactive starfields and glowing nebula effects.
-* **Ultra-Large Number Support:** Computes starting values up to **10,000 digits long** (meaning the largest supported value is $9.99\dots \times 10^{9999} \approx 10^{10000} - 1$) without crashing, breaking, or slowing down.
+* **Ultra-Large Number Support:** Computes starting values up to **10,000 digits long** (meaning the largest supported value is $10^{10^{4}} - 1$) without crashing, breaking, or slowing down.
 * **Dynamic SVG Path Charting:** Real-time generation of mathematical peak charts featuring custom bézier smoothing.
 * **Hybrid Execution Fallback:** Built with seamless fail-safes. If the Flask backend API is unreachable, the client dynamically falls back to an internal JavaScript evaluation algorithm.
 * **Dual-Mode Control:** Run it as a rich web dashboard or execute raw inputs directly via a fast, native Command Line Interface (CLI).
