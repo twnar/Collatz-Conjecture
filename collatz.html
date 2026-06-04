@@ -170,13 +170,6 @@
       margin-top: 10px;
       min-height: 16px;
     }
-    .info {
-      font-size: .7rem;
-      color: var(--mid);
-      letter-spacing: .08em;
-      margin-top: 10px;
-      min-height: 16px;
-    }
 
     /* ── results ── */
     #results {
@@ -291,7 +284,6 @@
       <button class="btn" id="runBtn">Compute →</button>
     </div>
     <p class="err" id="err"></p>
-    <p class="info" id="info"></p>
   </div>
 
   <div id="results" aria-live="polite">
@@ -419,7 +411,21 @@ function bigRatio(v, peak) {
 /* ─── WEIRD ALGORITHM ─────────────────────────────────── */
 const MAX_STEPS = 500_000;
 
+const LOOP_SHOWCASE = new Map([
+  [1n, [1n, 4n, 2n, 1n]],
+  [2n, [2n, 4n, 2n, 1n]],
+  [4n, [4n, 2n, 1n]],
+]);
+
 function weirdAlgorithmClient(start) {
+  if (LOOP_SHOWCASE.has(start)) {
+    const fullSeq = LOOP_SHOWCASE.get(start);
+    const steps = fullSeq.slice(1);
+    let peak = start;
+    for (const v of fullSeq) if (v > peak) peak = v;
+    return { a: start, fullSeq, peak, step: steps.length, isCollatz: true, truncated: false };
+  }
+
   const a = start;
   const steps = [];
   let step = 0;
@@ -626,10 +632,8 @@ function renderSeq(seq, peak, isCollatz) {
 async function compute() {
   const inp = document.getElementById('n');
   const err = document.getElementById('err');
-  const info = document.getElementById('info');
   const btn = document.getElementById('runBtn');
   err.textContent = '';
-  info.textContent = '';
 
   const raw = inp.value.trim();
   if (!raw) { err.textContent = 'Enter a positive integer first.'; return; }
@@ -659,8 +663,6 @@ async function compute() {
       return;
     }
     showResults(data);
-    if (location.port !== '8080')
-      info.textContent = 'Computed on Python backend (localhost:8080).';
   } catch {
     const local = weirdAlgorithmClient(n);
     if (local.truncated) {
@@ -668,7 +670,6 @@ async function compute() {
       return;
     }
     displayResults(local.fullSeq, local.peak, local.step, local.a, local.isCollatz);
-    info.textContent = 'Backend offline — computed in browser. Run run.bat for large numbers.';
   } finally {
     btn.disabled = false;
     btn.textContent = 'Compute →';
