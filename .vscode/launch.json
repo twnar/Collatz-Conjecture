@@ -1,0 +1,25 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "Python: Flask server",
+         "type": "debugpy",
+         "request": "launch",
+         "program": "${workspaceFolder}/server.py",
+         "console": "integratedTerminal"
+      },
+      {
+         "type": "chrome",
+         "request": "launch",
+         "name": "Chrome: localhost:8080",
+         "url": "http://localhost:8080",
+         "webRoot": "${workspaceFolder}"
+      }
+   ],
+   "compounds": [
+      {
+         "name": "Server + Chrome",
+         "configurations": ["Python: Flask server", "Chrome: localhost:8080"]
+      }
+   ]
+}
