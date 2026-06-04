@@ -3,7 +3,7 @@ Here is the completely updated and optimized `README.md` file tailored specifica
 ---
 
 ```markdown
-3x+1 — Collatz Conjecture Visualizer
+# 3x+1 — Collatz Conjecture Visualizer
 
 An interactive, cosmic-themed web dashboard and command-line engine built to calculate, map, and visualize the mathematical patterns of the Collatz Conjecture.
 
