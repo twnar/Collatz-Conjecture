@@ -2,7 +2,6 @@
 
 MAX_STEPS = 500_000
 
-# Classic 4 → 2 → 1 loop showcase for small inputs (each value appears at most twice).
 LOOP_SHOWCASE: dict[int, list[int]] = {
     1: [1, 4, 2, 1],
     2: [2, 4, 2, 1],

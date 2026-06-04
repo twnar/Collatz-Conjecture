@@ -78,3 +78,4 @@ The application prioritizes uptime by defaulting to a micro-Flask endpoint. When
 
 * Fonts: Google Fonts (Space Mono and Rajdhani typography profiles).
 * Backend Library: Flask open-source microframework architecture project.
+
